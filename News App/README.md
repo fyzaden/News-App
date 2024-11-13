@@ -1,1 +1,1 @@
-Kafamda tasarladığım gibi bir app olmadı. Göze daha iyi gözüken bir sayfa yapma yapmayı düşünüyordum. Ama çok karmaşık oldu defalarca yapıp sildim baştan başladım. Api yi çekemedim sayfa gelmedi, düzenlemeleri yapamadım, Css de kayboldum. Slider yapacaktım o tamamen bir kaos oluşturdu. Bende sade bildiğim gibi daha basit bir sayfa yapamaya çalıştım. Media query de ve bazı yerlerde yardım aldım. Ama media query işe yaparamadı niye bilmiyorum. Eksikliklerimi gördüm. Bu da bana artı bir feedback oldu. Bir de yine api key nasıl gizleyeceğim tam bilemedim.
+
