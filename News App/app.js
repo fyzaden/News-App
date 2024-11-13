@@ -1,4 +1,4 @@
-// const apiKey = "52817c6bd70a4d4eb450dea584aab424";
+// const apiKey = "";
 
 const newsContainer = document.getElementById("news-container");
 
