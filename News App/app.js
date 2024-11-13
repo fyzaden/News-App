@@ -23,6 +23,8 @@ async function performSeacrh() {
   if (sButton !== "") {
     try {
       const articles = await fetchNewsButton(sButton);
+      // Add additional check to confirm that the result returned by API is an OK response
+      // It would be good to also filter recieved articles as I can see articles named 'Removed' when I search for 'Google'
       displayNews(articles);
     } catch (error) {
       console.error("Error searching news", error);
@@ -37,10 +39,15 @@ searchInput.addEventListener("keydown", (event) => {
   }
 });
 
+// Rename the parameter from sButton to searchQuery
 async function fetchNewsButton(sButton) {
   try {
     const apiUrl = `https://newsapi.org/v2/everything?q=${sButton}&pageSize=12&apiKey=${apiKey}`;
     const response = await fetch(apiUrl);
+    // Add additional check to confirm that the result returned by API is an OK response
+    if (!response.ok) {
+      throw Error(`An error occured when fetching data from ${url}.`)
+    }
     const data = await response.json();
     return data.articles;
   } catch (error) {
@@ -50,6 +57,7 @@ async function fetchNewsButton(sButton) {
 }
 
 function displayNews(articles) {
+  // Use innerText of textContent instead of innerHTML. InnerHTML can be a security risk.
   newsContainer.innerHTML = "";
   articles.forEach((article) => {
     const newsCard = document.createElement("div");
